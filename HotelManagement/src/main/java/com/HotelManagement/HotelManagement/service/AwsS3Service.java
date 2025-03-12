@@ -19,7 +19,6 @@ public class AwsS3Service {
 
     private final String bucketName = "jana-hotel-images";
 
-//test1
     @Value("${aws.s3.access.key}")
     private String awsS3AccessKey;
 
