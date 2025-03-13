@@ -48,7 +48,7 @@ public class AwsS3Service {
             return "https://"+bucketName+".s3.amazonaws.com/"+s3FileName;
 
         }catch (Exception e){
-            throw new OurException("Unabe to upload to s3 bucket"+ e.getMessage());
+            throw new OurException("Unable to upload to s3 bucket"+ e.getMessage());
         }
     }
 
