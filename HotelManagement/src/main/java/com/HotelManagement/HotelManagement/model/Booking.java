@@ -68,4 +68,70 @@ public class Booking {
                 ", bookingConfirmationCode='" + bookingConfirmationCode + '\'' +
                 '}';
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public @NotNull(message = "Check-in Date is required") LocalDate getCheckInDate() {
+        return checkInDate;
+    }
+
+    public void setCheckInDate(@NotNull(message = "Check-in Date is required") LocalDate checkInDate) {
+        this.checkInDate = checkInDate;
+    }
+
+    public @Future(message = "Check-out Date must be in the future") LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setCheckOutDate(@Future(message = "Check-out Date must be in the future") LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
+    @Min(value = 1, message = "Number of adults must not be less than 1")
+    public int getNumOfAdults() {
+        return numOfAdults;
+    }
+
+    @Min(value = 0, message = "Number of childre must not be less than 0")
+    public int getNumOfChildren() {
+        return numOfChildren;
+    }
+
+    public int getTotalNumOfGuests() {
+        return totalNumOfGuests;
+    }
+
+    public void setTotalNumOfGuests(int totalNumOfGuests) {
+        this.totalNumOfGuests = totalNumOfGuests;
+    }
+
+    public String getBookingConfirmationCode() {
+        return bookingConfirmationCode;
+    }
+
+    public void setBookingConfirmationCode(String bookingConfirmationCode) {
+        this.bookingConfirmationCode = bookingConfirmationCode;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
 }

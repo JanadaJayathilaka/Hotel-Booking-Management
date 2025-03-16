@@ -74,4 +74,56 @@ public class User implements UserDetails {
     public String getPassword() {
         return password;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public @NotBlank(message = "Email is required") String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@NotBlank(message = "Email is required") String email) {
+        this.email = email;
+    }
+
+    public @NotBlank(message = "Name is required") String getName() {
+        return name;
+    }
+
+    public void setName(@NotBlank(message = "Name is required") String name) {
+        this.name = name;
+    }
+
+    public @NotBlank(message = "Phone Number is required") String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(@NotBlank(message = "Phone Number is required") String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setPassword(@NotBlank(message = "Password is required") String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
 }

@@ -9,6 +9,7 @@ import com.HotelManagement.HotelManagement.repository.UserRepository;
 import com.HotelManagement.HotelManagement.service.interfacE.IUserService;
 import com.HotelManagement.HotelManagement.utills.JWTUtills;
 import com.HotelManagement.HotelManagement.utills.Utils;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
