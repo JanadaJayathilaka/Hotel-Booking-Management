@@ -143,6 +143,24 @@ public class BookingService implements IBookingService {
 
     @Override
     public Response cancelBooking(Long bookingId) {
-        return null;
+        Response response =  new Response();
+
+        try {
+            bookingRepository.findById(bookingId).orElseThrow(()->new OurException("Booking does not exists"));
+            bookingRepository.deleteById(bookingId);
+            response.setStatusCode(200);
+            response.setMessage("Successful");
+
+
+        }catch (OurException e){
+            response.setStatusCode(404);
+            response.setMessage(e.getMessage());
+
+        }catch (Exception e){
+            response.setStatusCode(500);
+            response.setMessage("Error cancelling a bookings: "+e.getMessage());
+        }
+
+        return response;
     }
 }
