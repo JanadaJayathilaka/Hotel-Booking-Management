@@ -15,16 +15,18 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
+
+
     @GetMapping("/all")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<Response> getAllUsers(){
+    public ResponseEntity<Response> getAllUsers() {
         Response response = userService.getAllUsers();
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
-    @GetMapping("/get-by-id{userId}")
+    @GetMapping("/get-by-id/{userId}")
     public ResponseEntity<Response> getUserById(@PathVariable("userId")String userId){
-        Response response = userService.getAllUsers();
+        Response response = userService.getUserById(userId);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 

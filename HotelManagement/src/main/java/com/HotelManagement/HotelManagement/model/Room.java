@@ -30,9 +30,9 @@ public class Room {
         return "Room{" +
                 "id=" + id +
                 ", roomType='" + roomType + '\'' +
-                ", roomPrice='" + roomPrice + '\'' +
-                ", roomPhotoUrl='" + roomPhotoUrl + '\'' +
-                ", roomDescription='" + roomDescription + '\'' +
+                ", roomPrice=" + roomPrice +
+                ", roomPhotoUrsddsl='" + roomPhotoUrl + '\'' +
+                ",rroods"+roomDescription+
                 '}';
     }
 

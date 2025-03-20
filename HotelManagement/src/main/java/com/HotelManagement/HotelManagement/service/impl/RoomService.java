@@ -40,22 +40,20 @@ public class RoomService implements IRoomService {
             String imageUrl = awsS3Service.saveImageToS3(photo);
             Room room = new Room();
             room.setRoomPhotoUrl(imageUrl);
-            room.setRoomPhotoUrl(imageUrl);
             room.setRoomType(roomType);
-            room.setRoomPrice(roomPrice);
             room.setRoomDescription(description);
+            room.setRoomPrice(roomPrice);
 
-            Room saveRoom = roomRepository.save(room);
-            RoomDTO roomDTO = Utils.mapRoomEntityToRoomDTO(saveRoom);
+            Room savedRoom = roomRepository.save(room);
+            RoomDTO roomDTO = Utils.mapRoomEntityToRoomDTO(savedRoom);
             response.setStatusCode(200);
-            response.setMessage("Successful");
+            response.setMessage("successful");
             response.setRoom(roomDTO);
 
-        } catch (Exception e){
+        } catch (Exception e) {
             response.setStatusCode(500);
-            response.setMessage("Error saving a room "+ e.getMessage());
+            response.setMessage("Error saving a room " + e.getMessage());
         }
-
         return response;
     }
 

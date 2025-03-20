@@ -18,9 +18,9 @@ public class JWTUtills {
     private static final long EXPIRATION_TIME = 1000*60*24*7; //FOR 7 DAYS
 
     private  final SecretKey Key;
-
+    //IkpXVCJ9J1H8KlN5mqX5MBNzL9vRd3PSmNCkAY3Euyuyuuu
     public JWTUtills(){
-        String secretString = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9J1H8KlN5mqX5MBNzL9vRd3PSmNCkAY3Euyuyuuu";
+        String secretString = "843567893696976453275974432697R634976R738467TR678T34865R6834R8763T478378637664538745673865783678548735687R3";
         byte[] keyBytes = Base64.getDecoder().decode(secretString.getBytes(StandardCharsets.UTF_8));
         this.Key =  new SecretKeySpec(keyBytes,"HmacSHA256");
 
@@ -45,7 +45,7 @@ public class JWTUtills {
 
     public boolean isValidToken(String token, UserDetails userDetails){
         final String username = extractUsername(token);
-        return (username == userDetails.getUsername()&& !isTokenExpired(token));
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
 
