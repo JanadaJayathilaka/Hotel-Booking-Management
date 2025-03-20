@@ -21,7 +21,7 @@ public class BookingController {
     @Autowired
     private IBookingService bookingService;
 
-    @PostMapping("/book-romm/{roomId}/{userId}")
+    @PostMapping("/book-room/{roomId}/{userId}")
     @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public ResponseEntity<Response> saveBookings(@PathVariable Long roomId, @PathVariable Long userId, @RequestBody Booking bookingRequest ){
         Response response = bookingService.saveBooking(roomId,userId,bookingRequest);

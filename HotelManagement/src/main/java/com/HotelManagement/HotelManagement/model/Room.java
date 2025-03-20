@@ -31,8 +31,8 @@ public class Room {
                 "id=" + id +
                 ", roomType='" + roomType + '\'' +
                 ", roomPrice=" + roomPrice +
-                ", roomPhotoUrsddsl='" + roomPhotoUrl + '\'' +
-                ",rroods"+roomDescription+
+                ", roomPhotoUrl='" + roomPhotoUrl + '\'' +
+                ", roomDescription='" + roomDescription + '\'' +
                 '}';
     }
 
